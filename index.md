@@ -70,7 +70,7 @@ MySQL
 
 <h4>Interview Video</h4>
 <p>Click here to watch my interview video</p>
-Jadenabrahams(222206721)Compressed.mp4
+https://jaden222206721.github.io/Jadenabrahams(222206721)Compressed.mp4
 
 
 
