@@ -1,1 +1,1530 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaden Abrahams | Digital Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+    --bg: #0b1015;
+    --panel: #111a22;
+    --panel2: #16232c;
+    --border: #263640;
+    --text: #e9f0f2;
+    --muted: #9aaeb6;
+    --accent: #28c5b5;
+    --accent2: #73e0d2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+}
+
+h1,h2,h3,h4 {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 255px;
+    height: 100vh;
+    background: #0e161d;
+    border-right: 1px solid var(--border);
+    padding: 30px 20px;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.brand {
+    font-family: 'Space Grotesk';
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.brand span {
+    color: var(--accent);
+}
+
+.sidebar-subtitle {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 35px;
+}
+
+.nav-label {
+    color: #647b84;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin: 25px 10px 10px;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 11px 13px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    color: var(--muted);
+    font-size: 13px;
+    transition: .25s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(40,197,181,.12);
+    color: var(--accent2);
+}
+
+.nav-link i {
+    width: 18px;
+}
+
+.sidebar-footer {
+    margin-top: 35px;
+    padding: 15px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 11px;
+}
+
+main {
+    margin-left: 255px;
+    padding: 45px 6%;
+    max-width: 1500px;
+}
+
+section {
+    padding: 65px 0;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 25px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 13px;
+}
+
+h1 {
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: clamp(27px, 4vw, 39px);
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+h4 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.hero {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-description {
+    max-width: 670px;
+    font-size: 16px;
+    margin: 20px 0 28px;
+}
+
+.tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 20px 0;
+}
+
+.tag {
+    padding: 7px 13px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    border-radius: 30px;
+    font-size: 11px;
+    color: var(--accent2);
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 7px;
+    background: var(--accent);
+    color: #071412;
+    font-weight: 700;
+    font-size: 13px;
+    transition: .2s;
+}
+
+.btn:hover {
+    background: var(--accent2);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.grid.three {
+    grid-template-columns: repeat(3, minmax(0,1fr));
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 23px;
+    transition: .25s;
+}
+
+.card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.card-icon {
+    color: var(--accent);
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+.section-intro {
+    max-width: 780px;
+    margin-bottom: 25px;
+}
+
+.stat {
+    font-family: 'Space Grotesk';
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.small-label {
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.divider {
+    height: 1px;
+    background: var(--border);
+    margin: 20px 0;
+}
+
+ul.clean {
+    padding-left: 19px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+ul.clean li {
+    margin-bottom: 9px;
+}
+
+.highlight {
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    background: var(--panel);
+    border-radius: 0 9px 9px 0;
+    margin: 22px 0;
+}
+
+.highlight p {
+    margin: 0;
+}
+
+.reflection {
+    background: #122129;
+    border: 1px solid #28534f;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 20px;
+}
+
+.reflection h3 {
+    color: var(--accent2);
+}
+
+.evidence {
+    margin-top: 22px;
+}
+
+.evidence img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: block;
+}
+
+.evidence-item {
+    background: var(--panel);
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.evidence-item p {
+    font-size: 11px;
+    margin: 8px 2px 0;
+}
+
+.placeholder {
+    background: var(--panel2);
+    border: 1px dashed #52716f;
+    padding: 25px;
+    border-radius: 9px;
+    color: var(--muted);
+    text-align: center;
+    font-size: 12px;
+}
+
+.timeline {
+    border-left: 2px solid var(--border);
+    margin: 25px 0 25px 8px;
+    padding-left: 25px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.timeline-item:before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: -31px;
+    top: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.timeline-date {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+th,td {
+    text-align: left;
+    padding: 13px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+
+th {
+    color: var(--accent2);
+    background: var(--panel2);
+}
+
+td {
+    color: var(--muted);
+}
+
+.status {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.project-banner {
+    background: linear-gradient(120deg,#122d31,#14202a);
+    border: 1px solid #28534f;
+    padding: 30px;
+    border-radius: 14px;
+    margin: 25px 0;
+}
+
+.project-banner h3 {
+    color: var(--accent2);
+    font-size: 25px;
+}
+
+.video-box video {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+footer {
+    padding: 35px 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.mobile-header {
+    display: none;
+}
+
+@media(max-width:950px) {
+    .sidebar {
+        width: 220px;
+    }
+    main {
+        margin-left: 220px;
+        padding: 35px 4%;
+    }
+    .grid.three {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+}
+
+@media(max-width:700px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 18px;
+    }
+    .sidebar-subtitle,.sidebar-footer,.nav-label {
+        display: none;
+    }
+    .sidebar nav {
+        display: flex;
+        overflow-x: auto;
+        gap: 5px;
+        padding-top: 12px;
+    }
+    .nav-link {
+        white-space: nowrap;
+        font-size: 11px;
+        padding: 8px 10px;
+    }
+    main {
+        margin-left: 0;
+        padding: 20px;
+    }
+    section {
+        padding: 45px 0;
+    }
+    .grid,.grid.three {
+        grid-template-columns: 1fr;
+    }
+    .hero {
+        min-height: 420px;
+    }
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<aside class="sidebar">
+    <div class="brand">JADEN<span>.</span></div>
+    <div class="sidebar-subtitle">DIGITAL PORTFOLIO · 2026</div>
+
+    <nav>
+        <div class="nav-label">Portfolio</div>
+        <a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About Me</a>
+        <a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education & Skills</a>
+        <a href="#projects" class="nav-link"><i class="fa-solid fa-code"></i> Projects</a>
+
+        <div class="nav-label">Assessment Evidence</div>
+        <a href="#charter" class="nav-link"><i class="fa-solid fa-people-group"></i> Team Charter</a>
+        <a href="#stories" class="nav-link"><i class="fa-solid fa-list-check"></i> User Stories</a>
+        <a href="#product" class="nav-link"><i class="fa-solid fa-layer-group"></i> Product Backlog</a>
+        <a href="#sprint" class="nav-link"><i class="fa-solid fa-rotate"></i> Sprint Backlog</a>
+        <a href="#logbook" class="nav-link"><i class="fa-solid fa-book"></i> Agile Logbook</a>
+
+        <div class="nav-label">More</div>
+        <a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Experience</a>
+        <a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+    </nav>
+
+    <div class="sidebar-footer">
+        Cape Town, South Africa<br>
+        Application Development Student
+    </div>
+</aside>
+
+<main>
+
+<!-- HOME -->
+<section id="home" class="hero">
+<div class="hero-content">
+    <div class="eyebrow">WELCOME TO MY DIGITAL PORTFOLIO</div>
+    <h1>Jaden <span>Abrahams.</span></h1>
+    <h3>Application Development Student | Aspiring Developer</h3>
+
+    <p class="hero-description">
+        I am an ICT Application Development student at Cape Peninsula
+        University of Technology. This portfolio showcases my academic
+        journey, technical development, project experience and learning
+        through Agile teamwork.
+    </p>
+
+    <div class="tag-row">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Java</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Figma</span>
+        <span class="tag">Agile</span>
+    </div>
+
+    <div class="button-row">
+        <a href="#projects" class="btn">Explore My Work <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="eyebrow">01 / INTRODUCTION</div>
+    <h2>About Me</h2>
+
+    <div class="section-intro">
+        <p>
+            My name is Jaden Abrahams, and I am an Application Development
+            student at Cape Peninsula University of Technology. I am
+            interested in software development, especially front-end
+            development, because I enjoy the creative side of building
+            applications and focusing on how users interact with a system.
+        </p>
+        <p>
+            I enjoy learning how ideas can be transformed into practical
+            digital solutions. Through my studies and group projects, I
+            have developed an understanding of programming, interface
+            design, teamwork, communication and project planning.
+        </p>
+        <p>
+            My goal is to continue improving my development skills,
+            gain practical industry experience and become a capable
+            software developer.
+        </p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <h3>My Interest</h3>
+            <p>Front-end development, user interfaces, website design and creating useful digital experiences.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h3>My Career Goal</h3>
+            <p>To gain practical experience, continue developing my technical skills and build a career in the IT industry.</p>
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+    <div class="eyebrow">02 / DEVELOPMENT</div>
+    <h2>Education & Skills</h2>
+
+    <div class="grid">
+        <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-university"></i></div>
+            <h3>Cape Peninsula University of Technology</h3>
+            <p>Diploma in ICT: Application Development</p>
+            <p>2022 – Present</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-school"></i></div>
+            <h3>Belgravia High School</h3>
+            <p>National Senior Certificate (Matric)</p>
+            <p>2016 – 2020</p>
+        </div>
+    </div>
+
+    <h3 style="margin-top:35px;">Technical Skills</h3>
+    <div class="grid three">
+        <div class="card">
+            <h4><i class="fa-solid fa-code card-icon"></i> Programming</h4>
+            <p>JavaScript, HTML, CSS and Java.</p>
+        </div>
+        <div class="card">
+            <h4><i class="fa-solid fa-pen-ruler card-icon"></i> UI/UX Design</h4>
+            <p>Figma and interface prototyping.</p>
+        </div>
+        <div class="card">
+            <h4><i class="fa-solid fa-database card-icon"></i> Databases</h4>
+            <p>MySQL and database concepts.</p>
+        </div>
+        <div class="card">
+            <h4><i class="fa-solid fa-users card-icon"></i> Communication</h4>
+            <p>Teamwork, collaboration and customer service.</p>
+        </div>
+        <div class="card">
+            <h4><i class="fa-solid fa-brain card-icon"></i> Problem Solving</h4>
+            <p>Critical thinking, adaptability and practical problem-solving.</p>
+        </div>
+        <div class="card">
+            <h4><i class="fa-solid fa-list-check card-icon"></i> Project Management</h4>
+            <p>Task organisation, Agile practices and Trello.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="eyebrow">03 / PRACTICAL EXPERIENCE</div>
+    <h2>Projects</h2>
+    <p class="section-intro">
+        These projects demonstrate how I have applied concepts from
+        my studies to practical development and teamwork activities.
+    </p>
+
+    <div class="project-banner">
+        <div class="eyebrow">FEATURED GROUP PROJECT</div>
+        <h3>ActiveEdge</h3>
+        <p>
+            ActiveEdge is a sustainable performance sportswear business
+            concept focused on providing quality, affordable and
+            environmentally responsible activewear.
+        </p>
+        <div class="tag-row">
+            <span class="tag">Business Analysis</span>
+            <span class="tag">Agile</span>
+            <span class="tag">Teamwork</span>
+            <span class="tag">UI/UX</span>
+            <span class="tag">Website Development</span>
+        </div>
+        <a href="#charter" class="btn">View Project Evidence</a>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-book-open"></i></div>
+            <h3>Student Library E-Commerce Website</h3>
+            <p>
+                An individual project designed to allow students to
+                digitally search, borrow and return books.
+            </p>
+            <p><strong>Technologies:</strong> HTML, CSS, JavaScript, MySQL and Figma.</p>
+            <p>
+                I gained experience in interface design, database
+                integration and project management.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-people-group"></i></div>
+            <h3>Campus Connect</h3>
+            <p>
+                A student-focused marketplace and campus platform
+                developed as a group web project.
+            </p>
+            <p>
+                The platform includes marketplace, messaging and
+                student activity features.
+            </p>
+            <a href="https://campus-connect-tba3.onrender.com/#marketplace"
+               target="_blank" class="btn btn-outline">View Project</a>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM CHARTER -->
+<section id="charter">
+    <div class="eyebrow">04 / ASSESSMENT EVIDENCE · 20 MARKS</div>
+    <h2>Agile Team Charter</h2>
+
+    <div class="section-intro">
+        <p>
+            The Agile Team Charter established the purpose, vision,
+            responsibilities, values and working agreements of our
+            ActiveEdge project team. It helped us understand how we
+            would work together and manage our responsibilities.
+        </p>
+    </div>
+
+    <div class="project-banner">
+        <h3>ActiveEdge – Performance Sportswear</h3>
+        <p><strong>Project slogan:</strong> Built for the Planet</p>
+        <p><strong>Course:</strong> PRP372S</p>
+        <p><strong>Lecturer:</strong> Prima Inderlal</p>
+        <p><strong>Team Leader:</strong> Abdullahi Farah</p>
+        <p><strong>Charter date:</strong> 1 April 2026</p>
+    </div>
+
+    <h3>Team Purpose & Vision</h3>
+    <div class="grid">
+        <div class="card">
+            <h4>Team Mission</h4>
+            <p>
+                The aim of this project was to build South Africa's leading
+                sustainable performance sportswear brand, offering
+                fitness-active South Africans quality activewear that is
+                eco-responsible and genuinely affordable.
+            </p>
+        </div>
+        <div class="card">
+            <h4>Vision Statement</h4>
+            <p>
+                A South Africa where all sportsmen can train freely
+                without compromising their values or breaking their
+                budget in gear that performs, lasts and leaves the
+                least possible impact.
+            </p>
+        </div>
+        <div class="card">
+            <h4>Product / Service</h4>
+            <p>
+                High-performance activewear made from recycled and
+                eco-certified materials, including leggings, sports bras,
+                T-shirts, shorts and outerwear. The planned price range
+                was R250–R650.
+            </p>
+        </div>
+        <div class="card">
+            <h4>Success Definition</h4>
+            <p>
+                The relationship between customer demands and the
+                product offering is very clear.
+            </p>
+        </div>
+    </div>
+
+    <h3 style="margin-top:35px;">Team Members & Responsibilities</h3>
+    <div class="card">
+        <table>
+            <thead>
+                <tr><th>Team Member</th><th>Role</th><th>Responsibilities</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Abdullahi Farah</td><td>Group Leader</td><td>Business idea development, value proposition and overall coordination.</td></tr>
+                <tr><td>Touheed Ismail</td><td>Researcher</td><td>Market research, community context and competitor analysis.</td></tr>
+                <tr><td>Jaden Abrahams</td><td>Writer / Editor</td><td>5W marketing strategy, problem definition and document editing.</td></tr>
+                <tr><td>Lebohang Mosimane</td><td>Designer</td><td>Document design, formatting and visual presentation.</td></tr>
+                <tr><td>Entle Hlakuva</td><td>Presenter</td><td>Validation evidence, survey analysis and presentation delivery.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 style="margin-top:35px;">Core Team Values</h3>
+    <div class="grid">
+        <div class="card"><h4>Respect</h4><p>We listen actively and treat every team member's input with equal value.</p></div>
+        <div class="card"><h4>Transparency</h4><p>We share progress, blockers and feedback openly and honestly.</p></div>
+        <div class="card"><h4>Accountability</h4><p>We own our tasks and follow through on commitments.</p></div>
+        <div class="card"><h4>Trust</h4><p>We trust each other to deliver and raise issues early.</p></div>
+        <div class="card"><h4>Learning Mindset</h4><p>We treat challenges as opportunities to improve.</p></div>
+    </div>
+
+    <h3 style="margin-top:35px;">Communication Plan</h3>
+    <div class="card">
+        <ul class="clean">
+            <li><strong>WhatsApp:</strong> Day-to-day updates and communication.</li>
+            <li><strong>Google Meet:</strong> Scheduled team meetings.</li>
+            <li><strong>Google Drive:</strong> Sharing project documents.</li>
+            <li><strong>Meeting frequency:</strong> Weekly check-ins every Monday, with additional sessions when needed.</li>
+            <li><strong>Response times:</strong> Within 24 hours for non-urgent messages and within 3 hours for urgent issues during core hours.</li>
+            <li><strong>Decision-making:</strong> Team consensus for daily decisions, majority decisions for significant matters, and escalation to the group leader if necessary.</li>
+        </ul>
+    </div>
+
+    <h3 style="margin-top:35px;">SMART Goals & Milestones</h3>
+    <div class="card">
+        <table>
+            <thead>
+                <tr><th>Goal</th><th>Success Measure</th><th>Recorded Status</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Complete community research and problem definition</td><td>Section drafted and peer-reviewed.</td><td class="status">Done</td></tr>
+                <tr><td>Conduct market survey</td><td>30+ valid responses collected.</td><td class="status">Done</td></tr>
+                <tr><td>Analyse survey data and produce charts</td><td>5 validated figures produced.</td><td class="status">Done</td></tr>
+                <tr><td>Draft proposed solution and value proposition</td><td>Sections reviewed by all members.</td><td class="status">Done</td></tr>
+                <tr><td>Develop 5W marketing strategy</td><td>Strategy aligned to survey insights.</td><td class="status">Done</td></tr>
+                <tr><td>Finalise and submit business case</td><td>Submitted via portal by due date.</td><td class="status">Submitted</td></tr>
+                <tr><td>Complete and submit Agile Team Charter</td><td>Charter covers required components.</td><td>In progress in original charter</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 style="margin-top:35px;">Evidence</h3>
+    <p>
+        The following evidence should be added to demonstrate the
+        completed team charter and its use during the project.
+    </p>
+
+    <div class="grid">
+        <div class="placeholder">
+            <i class="fa-solid fa-file-pdf"></i><br><br>
+            Add your ActiveEdge Team Charter PDF here.
+        </div>
+        <div class="placeholder">
+            <i class="fa-solid fa-users"></i><br><br>
+            Add a screenshot showing team roles or team agreements.
+        </div>
+    </div>
+
+    <div class="reflection">
+        <h3>My Reflection</h3>
+        <p>
+            Working with the Agile Team Charter helped me understand the
+            importance of having clear responsibilities and expectations
+            within a group. Each member had a specific role, which helped
+            us understand what was expected from us and how our work
+            contributed to the overall project.
+        </p>
+        <p>
+            My responsibility was Writer / Editor. I worked on the
+            problem definition, 5W marketing strategy and editing
+            project documents. This allowed me to improve my writing,
+            communication and organisation skills.
+        </p>
+        <p>
+            One important lesson I learned was that teamwork requires
+            accountability and communication. When everyone understands
+            their responsibilities and communicates properly, it becomes
+            easier to complete tasks and work towards the same goal.
+        </p>
+    </div>
+</section>
+
+<!-- USER STORIES -->
+<section id="stories">
+    <div class="eyebrow">05 / ASSESSMENT EVIDENCE · 20 MARKS</div>
+    <h2>User Stories & Tasks</h2>
+
+    <p class="section-intro">
+        User stories describe project requirements from the perspective
+        of the people involved in using or benefiting from the project.
+        They help the team understand what needs to be achieved and
+        break larger requirements into manageable tasks.
+    </p>
+
+    <h3>ActiveEdge User Stories</h3>
+
+    <div class="card">
+        <h4>User Story 1 – Business Case Presentation</h4>
+        <p>
+            As an ActiveEdge project team, we want to convert the approved
+            business case into a professional presentation so that we
+            can communicate our business idea clearly to the class.
+        </p>
+        <div class="divider"></div>
+        <strong>Tasks:</strong>
+        <ul class="clean">
+            <li>Prepare a 14-slide presentation outline.</li>
+            <li>Map the slides to the business case sections.</li>
+            <li>Prepare the title, agenda and team roles slides.</li>
+            <li>Convert the value proposition and problem definition into slides.</li>
+            <li>Assign speaking sections to team members.</li>
+            <li>Rehearse and present the completed presentation.</li>
+        </ul>
+    </div>
+
+    <div class="card" style="margin-top:15px;">
+        <h4>User Story 2 – Team Rehearsal</h4>
+        <p>
+            As a project team, we want to rehearse our presentation so
+            that each member can deliver their assigned section
+            confidently and within the time limit.
+        </p>
+        <div class="divider"></div>
+        <strong>Tasks:</strong>
+        <ul class="clean">
+            <li>Allocate presentation sections.</li>
+            <li>Schedule a team rehearsal.</li>
+            <li>Practise individual speaking sections.</li>
+            <li>Review the presentation and make final improvements.</li>
+        </ul>
+    </div>
+
+    <div class="card" style="margin-top:15px;">
+        <h4>User Story 3 – Trello Taskboard Validation</h4>
+        <p>
+            As a project team, we want to present our Trello taskboard
+            to the lecturer so that our Agile workflow and task
+            management can be reviewed and validated.
+        </p>
+        <div class="divider"></div>
+        <strong>Tasks:</strong>
+        <ul class="clean">
+            <li>Prepare a walkthrough of the Trello board.</li>
+            <li>Show task allocation and progress tracking.</li>
+            <li>Explain sprint planning and task organisation.</li>
+            <li>Present the board to the lecturer.</li>
+            <li>Record and review feedback.</li>
+        </ul>
+    </div>
+
+    <div class="card" style="margin-top:15px;">
+        <h4>User Story 4 – Prototype Design</h4>
+        <p>
+            As a project team, we want to explore different design
+            approaches and create wireframes so that we can choose a
+            suitable interface for the ActiveEdge platform.
+        </p>
+        <div class="divider"></div>
+        <strong>Tasks:</strong>
+        <ul class="clean">
+            <li>Research UI/UX design patterns.</li>
+            <li>Discuss possible design approaches.</li>
+            <li>Map user journeys.</li>
+            <li>Create low-fidelity wireframes.</li>
+            <li>Evaluate design options against user needs.</li>
+            <li>Select a suitable design approach.</li>
+        </ul>
+    </div>
+
+    <div class="card" style="margin-top:15px;">
+        <h4>User Story 5 – Website Development</h4>
+        <p>
+            As an ActiveEdge project team, we want to move from the
+            static prototype towards a functional website so that
+            the project can provide a more complete digital experience.
+        </p>
+        <div class="divider"></div>
+        <strong>Tasks:</strong>
+        <ul class="clean">
+            <li>Establish the website codebase and folder structure.</li>
+            <li>Develop the main website layout and navigation.</li>
+            <li>Improve responsiveness across different screen sizes.</li>
+            <li>Include the brand logo and product images.</li>
+            <li>Plan database structure and API endpoints.</li>
+            <li>Coordinate front-end, back-end and content tasks.</li>
+            <li>Perform integration checks.</li>
+        </ul>
+    </div>
+
+    <h3 style="margin-top:35px;">My Contribution</h3>
+    <div class="highlight">
+        <p>
+            My documented individual contributions included completing
+            the problem definition and 5W marketing strategy, reviewing
+            and editing presentation content, participating in the
+            presentation rehearsal and presenting my assigned slides.
+            I also took part in the Trello walkthrough and subsequent
+            project feedback activities.
+        </p>
+    </div>
+
+    <h3>Evidence</h3>
+    <div class="grid">
+        <div class="placeholder">Add Trello screenshots showing user stories and their tasks.</div>
+        <div class="placeholder">Add screenshots of the presentation or design planning.</div>
+    </div>
+
+    <div class="reflection">
+        <h3>My Reflection</h3>
+        <p>
+            Creating and working with user stories helped me understand
+            how large project requirements can be divided into smaller
+            tasks. Instead of looking at the project as one large piece
+            of work, we could focus on specific activities and complete
+            them step by step.
+        </p>
+        <p>
+            I learned that tasks need to be clear and understandable so
+            that each team member knows what needs to be done. Working
+            on the presentation also helped me improve my communication
+            and teamwork skills.
+        </p>
+        <p>
+            I also learned that requirements can change as a project
+            develops. Lecturer feedback helped us review our original
+            direction and make adjustments to our design and website
+            plans.
+        </p>
+    </div>
+</section>
+
+<!-- PRODUCT BACKLOG -->
+<section id="product">
+    <div class="eyebrow">06 / ASSESSMENT EVIDENCE · 20 MARKS</div>
+    <h2>Product Backlog</h2>
+
+    <p class="section-intro">
+        The product backlog is a collection of project requirements,
+        features and improvements that need to be completed. It provides
+        an overview of the work required to achieve the ActiveEdge
+        project goals.
+    </p>
+
+    <div class="card">
+        <h3>ActiveEdge Product Backlog</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Requirement / Feature</th>
+                    <th>Related Work</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>PB01</td><td>Complete the business case and define the project idea.</td><td>Business analysis and problem definition.</td></tr>
+                <tr><td>PB02</td><td>Conduct market research and collect survey responses.</td><td>Community research and validation.</td></tr>
+                <tr><td>PB03</td><td>Analyse survey results and prepare charts.</td><td>Research analysis.</td></tr>
+                <tr><td>PB04</td><td>Define the value proposition and 5W marketing strategy.</td><td>Business case documentation.</td></tr>
+                <tr><td>PB05</td><td>Prepare and deliver the business case presentation.</td><td>Presentation development.</td></tr>
+                <tr><td>PB06</td><td>Organise and demonstrate the Trello taskboard.</td><td>Agile project management.</td></tr>
+                <tr><td>PB07</td><td>Research and select a suitable prototype design.</td><td>UI/UX design.</td></tr>
+                <tr><td>PB08</td><td>Create wireframes and develop the interface design.</td><td>Prototype development.</td></tr>
+                <tr><td>PB09</td><td>Establish the functional website structure.</td><td>Website development.</td></tr>
+                <tr><td>PB10</td><td>Develop and align the technical solution architecture.</td><td>Database and API planning.</td></tr>
+                <tr><td>PB11</td><td>Include brand identity and product images.</td><td>Visual assets and website content.</td></tr>
+                <tr><td>PB12</td><td>Conduct integration checks and review progress.</td><td>Testing and team coordination.</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:11px;margin-top:12px;">
+            Note: This is a consolidated portfolio view of requirements
+            documented across the project logbooks. It does not claim
+            that all requirements were completed.
+        </p>
+    </div>
+
+    <h3 style="margin-top:35px;">How the Product Backlog Was Used</h3>
+    <div class="grid">
+        <div class="card">
+            <h4>Organising Work</h4>
+            <p>
+                The backlog helped the team identify the different
+                activities required throughout the project.
+            </p>
+        </div>
+        <div class="card">
+            <h4>Prioritising Requirements</h4>
+            <p>
+                The team focused on the work needed for upcoming
+                milestones, including presentations, design decisions
+                and website development.
+            </p>
+        </div>
+        <div class="card">
+            <h4>Adapting to Feedback</h4>
+            <p>
+                Lecturer feedback resulted in changes to the project
+                direction, including the move from a static prototype
+                towards a functional website.
+            </p>
+        </div>
+        <div class="card">
+            <h4>Tracking Progress</h4>
+            <p>
+                Trello was used to organise tasks and show work that
+                was still in progress or had been completed.
+            </p>
+        </div>
+    </div>
+
+    <h3 style="margin-top:35px;">Evidence</h3>
+    <div class="grid">
+        <div class="placeholder">Add Trello screenshot showing the Product Backlog column.</div>
+        <div class="placeholder">Add the relevant project planning or backlog document.</div>
+    </div>
+
+    <div class="reflection">
+        <h3>My Reflection</h3>
+        <p>
+            The product backlog helped me understand how a project can
+            be planned by listing all the work that needs to be done.
+            It also showed me that project requirements can develop
+            over time as new ideas and feedback are received.
+        </p>
+        <p>
+            During ActiveEdge, our work moved from business research
+            and documentation towards presentation preparation,
+            prototype planning and website development. This showed
+            me why it is important to keep the backlog updated as
+            the project changes.
+        </p>
+        <p>
+            I learned that a product backlog gives the team a clearer
+            understanding of the overall project and helps members
+            focus on the work that is most important at each stage.
+        </p>
+    </div>
+</section>
+
+<!-- SPRINT BACKLOG -->
+<section id="sprint">
+    <div class="eyebrow">07 / ASSESSMENT EVIDENCE · 20 MARKS</div>
+    <h2>Sprint Backlog</h2>
+
+    <p class="section-intro">
+        A sprint backlog contains the tasks selected for a specific
+        period of work. It helps the team focus on the activities
+        required to achieve a sprint goal.
+    </p>
+
+    <div class="card">
+        <h3>Sprint 1 – Presentation Preparation</h3>
+        <p><strong>Recorded period:</strong> 14–17 July 2026</p>
+        <p><strong>Sprint goal:</strong> Prepare, rehearse and present the approved ActiveEdge Business Case.</p>
+        <ul class="clean">
+            <li>Prepare a 14-slide outline.</li>
+            <li>Develop the title, agenda and team roles slides.</li>
+            <li>Convert the business case sections into presentation slides.</li>
+            <li>Assign speaking sections.</li>
+            <li>Conduct rehearsals.</li>
+            <li>Present the completed presentation on 15 July 2026.</li>
+            <li>Review feedback and organise final project files.</li>
+        </ul>
+        <p class="status">Recorded outcome: Presentation completed and delivered.</p>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+        <h3>Sprint 2 – Taskboard and Design Planning</h3>
+        <p><strong>Recorded period:</strong> 21–24 July 2026</p>
+        <p><strong>Sprint goal:</strong> Present the Trello workflow, apply lecturer feedback and explore prototype design options.</p>
+        <ul class="clean">
+            <li>Prepare the Trello taskboard walkthrough.</li>
+            <li>Present the board to the lecturer on 21 July.</li>
+            <li>Review feedback received on 22 July.</li>
+            <li>Adjust project scope and prototype direction.</li>
+            <li>Research UI/UX design patterns.</li>
+            <li>Discuss possible design approaches.</li>
+            <li>Develop low-fidelity wireframes and evaluate design options.</li>
+        </ul>
+        <p class="status">Recorded outcome: Taskboard presented, feedback received and design approaches explored.</p>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+        <h3>Sprint 3 – Website Foundation and Architecture</h3>
+        <p><strong>Recorded period:</strong> 4–7 August 2026</p>
+        <p><strong>Sprint goal:</strong> Respond to lecturer feedback and establish the foundation for the functional website.</p>
+        <ul class="clean">
+            <li>Present project progress and obtain lecturer feedback.</li>
+            <li>Review the need for a professional logo and more product imagery.</li>
+            <li>Move from the static prototype towards website development.</li>
+            <li>Establish the codebase and folder structure.</li>
+            <li>Work on responsive website layouts.</li>
+            <li>Plan the database schema and API endpoints.</li>
+            <li>Align the business model and technical architecture milestones.</li>
+        </ul>
+        <p class="status">Recorded outcome: Website development foundation and planning activities were established.</p>
+    </div>
+
+    <h3 style="margin-top:35px;">Sprint Progress and Challenges</h3>
+    <div class="grid">
+        <div class="card">
+            <h4>Presentation Scheduling</h4>
+            <p>
+                Finding a time when all team members were available
+                for rehearsal was challenging because of other
+                module deadlines.
+            </p>
+        </div>
+        <div class="card">
+            <h4>Design Coordination</h4>
+            <p>
+                The team needed to discuss lecturer feedback and
+                agree on design changes before continuing with
+                the prototype.
+            </p>
+        </div>
+        <div class="card">
+            <h4>Website Transition</h4>
+            <p>
+                Moving from a static prototype to a functional
+                website required planning the codebase, layout
+                and technical architecture.
+            </p>
+        </div>
+    </div>
+
+    <h3 style="margin-top:35px;">Evidence</h3>
+    <div class="grid">
+        <div class="placeholder">Add screenshots of sprint tasks in Trello.</div>
+        <div class="placeholder">Add screenshots of completed tasks and progress.</div>
+    </div>
+
+    <div class="reflection">
+        <h3>My Reflection</h3>
+        <p>
+            Working with sprint backlogs helped me understand the
+            importance of setting short-term goals and breaking
+            project work into manageable stages. Each sprint gave
+            the team a clear focus and helped us monitor our progress.
+        </p>
+        <p>
+            During the presentation sprint, I completed my assigned
+            problem definition and 5W marketing strategy sections,
+            helped review the presentation and presented my slides.
+            During later project activities, I participated in the
+            Trello walkthrough and the discussions following
+            lecturer feedback.
+        </p>
+        <p>
+            One of the main things I learned was that a sprint plan
+            needs to be flexible. When the lecturer suggested
+            improvements, we had to adjust our plans and reconsider
+            the design direction. This helped me understand that
+            Agile is not about following one fixed plan but about
+            improving the project through feedback and regular reviews.
+        </p>
+    </div>
+</section>
+
+<!-- AGILE LOGBOOK -->
+<section id="logbook">
+    <div class="eyebrow">08 / ASSESSMENT EVIDENCE · 20 MARKS</div>
+    <h2>Agile Logbook</h2>
+
+    <p class="section-intro">
+        The Agile Logbook records individual and team progress.
+        It includes daily activities, planned work, challenges
+        and updates on project tasks.
+    </p>
+
+    <h3>My Recorded Activities</h3>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">14 JULY 2026</div>
+            <h4>Presentation Preparation</h4>
+            <p>
+                Completed my assigned sections on Problem Definition
+                and the 5W Marketing Strategy. Helped review and edit
+                the presentation to ensure everything was clear
+                and consistent.
+            </p>
+            <p><strong>Next task:</strong> Practise my presentation and assist with final changes.</p>
+            <p><strong>Challenge:</strong> Finding a suitable time for all team members to rehearse.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">15 JULY 2026</div>
+            <h4>Presentation Delivery</h4>
+            <p>
+                Took part in the group rehearsal and presented my
+                assigned slides during the ActiveEdge presentation.
+            </p>
+            <p><strong>Next task:</strong> Review the presentation and note feedback.</p>
+            <p><strong>Challenge:</strong> I was slightly nervous before presenting, but the presentation went well.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">16–17 JULY 2026</div>
+            <h4>Review and Documentation</h4>
+            <p>
+                Reviewed the lecturer's feedback with the group,
+                completed my Agile Logbook and confirmed that
+                the project work had been submitted.
+            </p>
+            <p><strong>Challenge:</strong> No major impediments were recorded.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">21 JULY 2026</div>
+            <h4>Trello Taskboard Presentation</h4>
+            <p>
+                Presented the Trello taskboard to the lecturer,
+                explaining our Agile workflow, sprint planning
+                and how tasks were monitored.
+            </p>
+            <p><strong>Next task:</strong> Review lecturer feedback and update the project plan.</p>
+            <p><strong>Challenge:</strong> Other assignment deadlines affected immediate team collaboration.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">22 JULY 2026</div>
+            <h4>Implementing Feedback</h4>
+            <p>
+                Incorporated lecturer feedback to improve the
+                project scope and refine the prototype design.
+            </p>
+            <p><strong>Next task:</strong> Complete remaining updates and prepare for design brainstorming.</p>
+            <p><strong>Challenge:</strong> The team needed to discuss revisions to ensure everyone understood the changes.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">23–24 JULY 2026</div>
+            <h4>Design Brainstorming</h4>
+            <p>
+                Assessed design options, discussed UI/UX approaches
+                and explored different concepts for the ActiveEdge
+                prototype.
+            </p>
+            <p><strong>Next task:</strong> Finalise the design approach and prepare for user testing.</p>
+            <p><strong>Challenge:</strong> Scheduling the design brainstorming session around team availability.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">4 AUGUST 2026</div>
+            <h4>Lecturer Feedback</h4>
+            <p>
+                Presented the project progress and received feedback
+                about creating a professional logo, adding more
+                product images and expanding website sections.
+            </p>
+            <p><strong>Next task:</strong> Begin moving from the prototype towards the actual website.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">5 AUGUST 2026</div>
+            <h4>Website Development Direction</h4>
+            <p>
+                Shifted focus from the prototype to website creation
+                and worked towards establishing a solid foundation.
+            </p>
+            <p><strong>Next task:</strong> Continue populating the website and improve responsiveness.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">6–7 AUGUST 2026</div>
+            <h4>Development and Architecture Planning</h4>
+            <p>
+                The team worked on front-end layouts, back-end logic
+                and content. I also reviewed the milestones for the
+                business model and solution architecture.
+            </p>
+            <p><strong>Challenge:</strong> Coordinating code integration and balancing business goals with technical feasibility.</p>
+        </div>
+    </div>
+
+    <h3>Daily Stand-up Structure</h3>
+    <div class="card">
+        <p>Our logbook used three main questions to track daily progress:</p>
+        <ul class="clean">
+            <li>What did I complete since the last stand-up?</li>
+            <li>What am I planning to complete before the next stand-up?</li>
+            <li>What are my impediments, risks or problems?</li>
+        </ul>
+    </div>
+
+    <h3 style="margin-top:35px;">Evidence</h3>
+    <div class="grid">
+        <div class="placeholder">Add your completed July Agile Logbook PDF.</div>
+        <div class="placeholder">Add your August and September logbook/report evidence.</div>
+    </div>
+
+    <div class="reflection">
+        <h3>My Reflection</h3>
+        <p>
+            Keeping an Agile Logbook helped me understand the
+            importance of recording daily activities and keeping
+            track of personal progress. It allowed me to look back
+            at what I had completed, what still needed attention
+            and what challenges affected my work.
+        </p>
+        <p>
+            One challenge I experienced was feeling nervous before
+            presenting my assigned slides. However, taking part in
+            the rehearsal helped me prepare and deliver my section.
+            I also experienced challenges with team availability
+            and coordinating work around other assignment deadlines.
+        </p>
+        <p>
+            I learned that recording these challenges is important
+            because it helps identify areas that need improvement.
+            The logbook also encouraged me to take responsibility
+            for my own tasks and communicate my progress to the team.
+        </p>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+    <div class="eyebrow">09 / PROFESSIONAL DEVELOPMENT</div>
+    <h2>Work Experience</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Gasienas Driving Academy</h3>
+            <p><strong>Driving Instructor</strong></p>
+            <p>January 2021 – January 2022</p>
+            <ul class="clean">
+                <li>Developed customised lesson plans to meet individual student needs.</li>
+                <li>Assessed and monitored student progress.</li>
+                <li>Instructed students on vehicle operation, safety and proper handling.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Quarter Mile Motor Spares</h3>
+            <p><strong>Job Shadow – Cashier</strong></p>
+            <p>January 2019 – December 2019</p>
+            <ul class="clean">
+                <li>Provided customer service in a busy environment.</li>
+                <li>Assisted with inventory ordering and shelf stocking.</li>
+                <li>Developed product knowledge and organised merchandise displays.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3 style="margin-top:35px;">Interview Video</h3>
+    <p>
+        The following video forms part of my professional development
+        evidence and provides an opportunity to demonstrate my
+        communication and interview skills.
+    </p>
+
+    <div class="video-box">
+        <video controls preload="metadata">
+            <source src="Jadenabrahams(222206721)Compressed.mp4" type="video/mp4">
+            Your browser does not support this video.
+        </video>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="eyebrow">10 / GET IN TOUCH</div>
+    <h2>Contact Me</h2>
+
+    <p class="section-intro">
+        I am interested in gaining practical experience,
+        learning from other developers and exploring
+        opportunities within the IT industry.
+    </p>
+
+    <div class="grid">
+        <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-envelope"></i></div>
+            <h3>Email</h3>
+            <p>222206721@mycput.ac.za</p>
+            <a href="mailto:222206721@mycput.ac.za" class="btn btn-outline">Send Email</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-phone"></i></div>
+            <h3>Phone</h3>
+            <p>066 235 2064</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <h3>Location</h3>
+            <p>Cape Town, South Africa</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon"><i class="fa-brands fa-github"></i></div>
+            <h3>GitHub</h3>
+            <p>View my development portfolio and work.</p>
+            <a href="https://github.com/jaden222206721"
+               target="_blank" class="btn btn-outline">Visit GitHub</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>Designed and developed by Jaden Abrahams</p>
+    <p>Digital Portfolio · 2026 · Cape Peninsula University of Technology</p>
+    <p>© 2026 Jaden Abrahams. All rights reserved.</p>
+</footer>
+
+</main>
+
+<script>
+const links = document.querySelectorAll('.nav-link');
+
+links.forEach(link => {
+    link.addEventListener('click', () => {
+        links.forEach(item => item.classList.remove('active'));
+        link.classList.add('active');
+    });
+});
+
+const sections = document.querySelectorAll('main section');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+
+    sections.forEach(section => {
+        const top = section.offsetTop - 150;
+        if (window.scrollY >= top) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
+
